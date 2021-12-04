@@ -1,0 +1,22 @@
+<form #login="ngForm">
+  <input name="name" type="text" ngModel placeholder="name" />
+  <br />
+  <br />
+  <input
+    name="password"
+    ngModel
+    type="password"
+    placeholder="password
+"
+  />
+  <br /><br />
+  <div class="checkbox">
+    <label>
+      <input
+        name="remeber"
+        type="checkbox"
+        (click)="getCookie(login.value)"
+      />remeber me</label
+    >
+  </div>
+</form>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "view-citizen.component.scss"
+    ],
+    "names": [],
+    "file": "view-citizen.component.css"
+}

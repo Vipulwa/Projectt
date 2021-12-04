@@ -1,0 +1,47 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+/>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <a [routerLink]="'/admin-dash/view-citizen'">
+        <div class="card-counter info">
+          <i class="fa fa-user" style="color: black; font-size: xx-large">
+            Users</i
+          >
+        </div></a
+      >
+    </div>
+
+    <div class="col-md-3">
+      <a [routerLink]="'/admin-dash/view-dept'">
+        <div class="card-counter danger">
+          <i class="fa fa-building" style="color: black; font-size: xx-large"
+            >Department</i
+          >
+        </div></a
+      >
+    </div>
+
+    <div class="col-md-3">
+      <a [routerLink]="'/admin-dash/add-dept'">
+        <div class="card-counter success">
+          <i class="fa fa-building-o" style="color: black; font-size: xx-large"
+            >Add Department</i
+          >
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a [routerLink]="'/admin-dash/view-complaint'"
+        ><div class="card-counter info">
+          <i class="fa fa-times" style="color: black; font-size: xx-large"
+            >Complaints</i
+          >
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

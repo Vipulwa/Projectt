@@ -1,0 +1,102 @@
+<div id="main">
+  <form
+    #loginForm="ngForm"
+    (submit)="getData(loginForm.value)"
+    [formGroup]="exform"
+  >
+    <div class="container px-4 py-5 mx-auto">
+      <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+          <div class="card card1">
+            <div class="row justify-content-center my-auto">
+              <div class="col-md-8 col-10 my-5">
+                <h3 class="mb-5 text-center heading">Login Here</h3>
+
+                <div class="form-group">
+                  <label class="form-control-label text-muted">Email :</label>
+                  <input
+                    type="text"
+                    name="email"
+                    formControlName="email"
+                    [(ngModel)]="email"
+                    placeholder="Email"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      exform.get('email').invalid &&
+                      exform.get('email').touched
+                    "
+                    >Email Required</span
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label text-muted"
+                    >Password :</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    [(ngModel)]="password"
+                    formControlName="password"
+                    placeholder="Password"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      exform.get('password').invalid &&
+                      exform.get('password').touched
+                    "
+                    >Password is Required</span
+                  >
+                </div><br>
+                <div class="captcha">
+                  <ngx-recaptcha2
+                      [siteKey]="siteKey"
+                      formControlName="recaptcha"
+                  ></ngx-recaptcha2>
+                </div>
+
+                <div class="row justify-content-center my-3 px-3">
+                  <button
+                    class="btn-block btn-color"
+                    [disabled]="exform.invalid"
+                    (click)="getData(exform.value)"
+                  >
+                    Login
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>
+                Don't have an account?
+                <button
+                  class="btn btn-white justify-content-center"
+                  routerLink="'/register'"
+                >
+                  Create Account
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="card card2">
+            <div class="my-auto mx-md-5 px-md-5 right">
+              <h3 class="text-white">We are here to help you.</h3>
+              <small class="text-white"
+                >It is our duty to help our beloved citizens of this country.
+                This site is for you and the inconvinence you are facing . You
+                can complaint about the problem you are facing and we will try
+                our best to solve it asap. Thank you.</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+.container-fluid {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#6e8226), to(#dab643));
+  background-image: linear-gradient(to right, #6e8226, #dab643);
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=department-dashboard.component.css.map */

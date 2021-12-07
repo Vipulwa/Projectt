@@ -1,0 +1,11 @@
+.department-box {
+  max-width: 900px;
+  height: 900px;
+}
+
+#department .container #department-row #department-column #department-box {
+  margin-top: 80px;
+  max-width: 600px;
+  height: 600px;
+}
+/*# sourceMappingURL=add-department.component.css.map */

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <h2 style="color: azure">
+      <a class="text-decoration-none "  [routerLink]="''">
+        <code style="font-family: 'Lobster', cursive; font-size: larger;" > Grievance Management System</code>
+      </a>
+    </h2>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-dark" mat-icon-button [routerLink]="''">
+          Home
+        </button>
+      </li>
+      
+      <li class="nav-item">
+        
+        <button class="btn btn-dark ml-3" type="button"
+        *ngIf="!loggedIn()"
+        [routerLink]="'/login'">
+          Login
+        </button>
+      </li>
+      <li class="nav-item">
+        
+        <button
+          class="btn btn-dark ml-3"
+          type="button"
+          *ngIf="!loggedIn()"
+          [routerLink]="'/register'"
+        >
+          Register
+        </button>
+      </li>
+
+      <!-- <li class="nav-item">
+        <button *ngIf="loggedIn()" class="btn ml-2" type="button">
+          {{ currentUser }}
+        </button>
+      </li> -->
+
+      <li class="nav-item">
+        
+        <button
+          class="btn btn-dark ml-3"
+          type="button"
+          *ngIf="loggedIn()"
+          routerLink="''"
+          (click)="onLogout()"
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

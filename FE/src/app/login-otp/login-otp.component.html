@@ -1,0 +1,69 @@
+
+
+
+<div id="department-column" class="col-md-12">
+	<div id="department-box" class="col-md-12">
+<div id="body">
+    <div *ngIf="showLoginForm != '' ">
+        <div fxLayoutAlign="center center" class="mt-6" >
+    <mat-card class="example-form" fxFlex.xs="100%"  style="width: 400px;">
+    <form [formGroup] = "loginForm" (ngSubmit)="login(loginForm)" class="example-form">
+        <h2>Login With Otp</h2>
+       <mat-form-field class="example-full-width">
+           <br>
+            <mat-label>Email </mat-label>
+            <input  matInput type="text" id="email" name="email" formControlName="email" class="form-control">
+       </mat-form-field>
+            <div class="error"  class="text-danger" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">Email is required</div>
+        
+    
+          <div *ngIf="userNotFound != ''">
+                <h2 style="color: red;">{{userNotFound}}</h2>
+          </div>
+    
+          <mat-card-content>
+            <mat-card-actions>
+    
+        <button class="btn btn-success" type="submit">Submit</button>
+    </mat-card-actions>
+    </mat-card-content>
+    
+          <div *ngIf="inactiveAccount != ''">
+            <h2 style="color: red;">{{inactiveAccount}}</h2>
+            <h2>Login From here to activate your account <a routerLink="/login">here</a></h2>
+          </div>
+          
+    </form>
+    </mat-card>
+    </div>
+    </div>
+    
+    <div *ngIf="showOtpArea != '' ">
+        <div fxLayoutAlign="center center" class="mt-6" >
+        <mat-card class="example-form"  fxFlex.xs="100%"  style="width: 400px;">
+        <h2>Hello {{user.email}} ,
+        We have sent OTP to your registered email Id {{user.email}}</h2>
+    
+            <form [formGroup] = "otpForm" (ngSubmit)="otp(otpForm)" class="example-form">
+              <mat-form-field class="example-full-width">
+                    <label>OTP  </label>
+                    <input matInput type="text" id="otp" name="otp" formControlName="otp" class="form-control">
+                </mat-form-field>
+                    <div class="error"  class="text-danger" *ngIf="otpForm.controls['otp'].hasError('required') && otpForm.controls['otp'].touched">OTP is required</div>
+                    <mat-card-content>
+                    <mat-card-actions>
+    
+                        <div *ngIf="invalidOtp != ''">
+                            <h2 style="color: red;">{{invalidOtp}}</h2>
+                        </div>
+    
+                <button class="btn btn-success" type="submit">Submit</button>
+            </mat-card-actions>
+            </mat-card-content>
+            </form>
+    </mat-card>
+    </div>
+    </div>
+    </div>
+</div>
+</div>

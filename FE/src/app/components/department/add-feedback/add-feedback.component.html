@@ -1,0 +1,68 @@
+<div id="department">
+    <div class="container">
+      <div
+        id="department-row"
+        class="row justify-content-center align-items-center"
+      >
+        <div id="department-column" class="col-md-6">
+          <div id="department-box" class="col-md-12">
+            <form #Feedback="ngForm" class="form pt-5" [formGroup]="exform">
+              <h2 class="text-center text-info text-dark">Feedback Form</h2>
+              <div class="form-group pt-4">
+                <label for="feedback" class="text-info text-dark">Feedback:</label
+                ><br />
+                <input
+                  type="text"
+                  name="feedback"
+                  formControlName="feedback"
+                  [(ngModel)]="feedback"
+                  class="form-control"
+                  required
+                />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    exform.get('feedback').invalid && exform.get('feedback').touched
+                  "
+                  >Please Enter Feedback</span
+                >
+              </div>
+              <div class="form-group">
+                <label for="suggestion" class="text-info text-dark">Suggestion:</label
+                ><br />
+                <input
+                  type="suggestion"
+                  name="suggestion"
+                  formControlName="suggestion"
+                  [(ngModel)]="suggestion"
+                  class="form-control"
+                  required
+                />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    exform.get('suggestion').invalid &&
+                    exform.get('suggestion').touched
+                  "
+                  >Please Enter Suggestion</span
+                >
+              </div>
+  
+              <div class="form-group text-center">
+                <br />
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  (click)="addFeedback(Feedback.value)"
+                  [disabled]="exform.invalid"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

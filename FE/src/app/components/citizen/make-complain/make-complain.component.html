@@ -1,0 +1,76 @@
+<div id="complain">
+  <div class="container">
+    <div
+      id="complain-row"
+      class="row justify-content-center align-items-center"
+    >
+      <div id="complain-column" class="col-md-6">
+        <div id="complain-box" class="col-md-12">
+          <form #addComplain="ngForm" class="form pt-5" [formGroup]="exform" >
+              <h2 class="text-center text-info text-dark">Register Your Complaint</h2>
+              <div class="form-group pt-4">
+                  <label for="complain" class="text-info text-dark">department Name :</label>
+                  <br />
+
+                  <ng-select  [(ngModel)]="departmentName" formControlName="departmentName" name="departmentName">
+                    <ng-option *ngFor="let department of departments"  [value]="department"  >{{department}}</ng-option>
+                 </ng-select>
+
+                 <span
+                 class="text-danger"
+                 *ngIf="
+                   exform.get('departmentName').invalid && exform.get('departmentName').touched
+                 "
+                 >Please select Department</span
+               >
+              </div>  
+
+              <div class="form-group">
+                  <label for="department" formControlName="department"class="text-info text-dark"
+                    >Describe Your Complain:</label
+                  ><br />
+                  <textarea   [(ngModel)]="complain.complain" formControlName="complain" placeholder="complain" name="complain" rows="4" cols="50" required></textarea> 
+                  <span
+                  class="text-danger"
+                  *ngIf="
+                    exform.get('complain').invalid && exform.get('complain').touched
+                  "
+                  >Please Enter Complain</span
+                >
+                </div>
+              
+              <div class="form-group">
+                  <label for="department" class="text-info text-dark">
+                    Subject Of  Complain</label>
+                  <br />
+                     <input  [(ngModel)]="complain.subject" formControlName="subject" placeholder="subject" name="subject" class="form-control" id="subject"  required          >
+                    
+                     <span
+                     class="text-danger"
+                     *ngIf="
+                       exform.get('subject').invalid && exform.get('subject').touched
+                     "
+                     >Please Enter Subject  </span
+                   >
+                    
+                   
+                     
+              </div>
+
+              <div class="form-group text-center">
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                   (click)="registerComplain(addComplain.value)"
+                   [disabled]="exform.invalid"
+                  >
+                   Register Complain
+                  </button>
+                </div>
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> 

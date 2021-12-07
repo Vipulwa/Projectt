@@ -1,0 +1,47 @@
+.demo-table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.mat-column-id {
+  text-align: center;
+}
+
+.mat-column-status {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.mat-header-cell {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ngb-rating {
+  color: #FFC107;
+  font-size: 40px;
+}
+
+textarea {
+  resize: none;
+}
+
+.star {
+  color: #FFC107;
+}
+/*# sourceMappingURL=view-public-complains.component.css.map */

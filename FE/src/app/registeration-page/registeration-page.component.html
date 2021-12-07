@@ -1,0 +1,146 @@
+<div id="main">
+  <form #registerForm="ngForm" [formGroup]="exform" >
+    <div class="container px-4 py-5 mx-auto">
+      <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+          <div class="card card1">
+            <div class="row justify-content-center my-auto">
+              <div class="col-md-8 col-10 my-5">
+                <h3 class="mb-5 text-center heading">Register Here</h3>
+                <div class="form-group">
+                  <label class="form-control-label text-muted" for="email"
+                    >Username :</label
+                  >
+                  
+                  <input
+                    type="text"
+                    name="username"
+                    formControlName="username"
+                    [(ngModel)]="username"
+                    placeholder="Username"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                  class="text-danger"
+                  *ngIf="
+                    exform.get('username').invalid && exform.get('username').touched
+                  "
+                  >Please Enter Valid Username</span
+                >
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label text-muted">Email :</label>
+                  <input
+                    type="email"
+                    name="email"
+                    formControlName="email"
+                    [(ngModel)]="email"
+                    placeholder="Email"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                  class="text-danger"
+                  *ngIf="
+                    exform.get('email').invalid && exform.get('email').touched
+                  "
+                  >Please Enter Valid Email</span
+                >
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label text-muted" for="password"
+                    >Password :</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    formControlName="password"
+                    [(ngModel)]="password"
+                    placeholder="Password"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                class="text-danger"
+                *ngIf="
+                  exform.get('password').invalid &&
+                  exform.get('password').touched
+                "
+                >Password should be between 5 to 12 words</span
+              >
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label text-muted">
+                    Confirm Password :</label
+                  >
+                  <input
+                    type="password"
+                    name="confirmpassword"
+                    formControlName="confirmpasswordf"
+                    [(ngModel)]="confirmpasswordf"
+                    placeholder="Confirm Password"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      exform.get('password').value !=
+                      exform.get('confirmpasswordf').value || 
+                      exform.get('confirmpasswordf.touched')
+                    "
+                    >Confirm password and password should be same </span
+                  >
+                </div>
+                <!-- <div class="form-group">
+                  <label class="form-control-label text-muted">
+                    Confirm Password :</label
+                  >
+                  <input
+                    type="password"
+                    name="confirmpassword"
+                    ngModel
+                    placeholder="Confirm Password"
+                    class="form-control"
+                    required
+                  />
+                </div> -->
+                <div class="row justify-content-center my-3 px-3">
+                  <button
+                  type="button"
+                  (click)="addUser(registerForm.value)"
+                  [disabled]="exform.invalid"
+                   class="btn-block btn-color">Register</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>
+                If, already have an Account<button
+                  class="btn btn-white ml-2"
+                  [routerLink]="'/login'"
+                >
+                  Login
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="card card2">
+            <div class="my-auto mx-md-5 px-md-5 right">
+              <h3 class="text-white">We are here to help you.</h3>
+              <small class="text-white"
+                >It is our duty to help our beloved citizens of this country.
+                This site is for you and the inconvinence you are facing . You
+                can complaint about the problem you are facing and we will try
+                our best to solve it asap. Thank you.</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+

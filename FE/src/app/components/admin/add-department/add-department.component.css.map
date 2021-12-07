@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAaA,AAAA,eAAe,CAAC;EACd,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,KAAK;CACd;;AACD,AAAA,WAAW,CAAC,UAAU,CAAC,eAAe,CAAC,kBAAkB,CAAC,eAAe,CAAC;EACxE,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,KAAK;EAEhB,MAAM,EAAE,KAAK;CAGd",
+    "sources": [
+        "add-department.component.scss"
+    ],
+    "names": [],
+    "file": "add-department.component.css"
+}

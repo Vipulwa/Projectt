@@ -1,0 +1,33 @@
+<table class="table table-striped" style="margin-left: 5%;" >
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">complain</th>
+        <th scope="col">subject</th>
+        <th scope="col">Create Date</th>
+       
+        <th scope="col">Closed Date</th>
+        <th scope="col">Status </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let complain of complaints">
+        
+        <td>{{complain.id}}</td>
+        <td>{{complain.complain}}</td>
+        <td>{{complain.subject}}</td>
+        <td>{{complain.createDate | date : 'dd-MM-yyyy'}}</td>
+        <td>{{complain.status}}</td>
+        <td> <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="sendReminder(complain.id,complain.createDate)"
+          >
+            Send Reminder
+          </button>
+     
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
